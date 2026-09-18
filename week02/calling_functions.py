@@ -2,9 +2,6 @@ def calculate_age_number(prompt):
     """
     Asks user for age and add 10 years to the age number based on the given age.
 
-    Parameters:
-    age (int): The age of the person.
-
     Returns:
     int: The calculated age number.
     """
