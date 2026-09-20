@@ -5,13 +5,9 @@ Project: Password Strength Calculator
 Enhancement:
 Added password history tracking.
 The program stores passwords that have already been checked
-and notifies the user if they attempt to check the same
-password more than once.
+and notifies the user to enter a different password if the
+same password is entered again.
 """
-
-
-
-
 
 LOWER = [
     "a", "b", "c", "d", "e", "f", "g", "h", "i","j", "k", "l","m",
