@@ -27,13 +27,13 @@ SPECIAL = [
     "\"", ",", ".", "<", ">", "?", "/", "\\","`", "~"
     ]
 
-def word_in_file(word, filename, case_sensitive):
+def word_in_file(word, filename, case_sensitive=False):
     """
     Search a file for a word and return True if found,
     otherwise return False.
     """
     if not case_sensitive:
-        word = word.lower()
+        word = word.lower() 
 
     with open(filename, "r", encoding="utf-8") as file:
         for line in file:
