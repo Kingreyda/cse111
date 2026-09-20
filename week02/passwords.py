@@ -1,3 +1,17 @@
+"""
+Author: King David Olaribigbe
+Project: Password Strength Calculator
+
+Enhancement:
+Added password history tracking.
+The program stores passwords that have already been checked
+and notifies the user if they attempt to check the same
+password more than once.
+"""
+
+
+
+
 
 LOWER = [
     "a", "b", "c", "d", "e", "f", "g", "h", "i","j", "k", "l","m",
@@ -28,8 +42,10 @@ def word_in_file(word, filename, case_sensitive):
     with open(filename, "r", encoding="utf-8") as file:
         for line in file:
             line = line.strip()
+
             if not case_sensitive:
                 line = line.lower()
+
             if line == word:
                 return True
     return False
@@ -50,12 +66,16 @@ def word_complexity(word):
     for a word based on character types used.
     """
     complexity = 0
+
     if word_has_character(word, LOWER):
         complexity += 1
+
     if word_has_character(word, UPPER):
         complexity += 1
+
     if word_has_character(word, DIGITS):
         complexity += 1
+
     if word_has_character(word, SPECIAL):
         complexity += 1
     return complexity
@@ -68,12 +88,15 @@ def password_strength(password, min_length=10, strong_length=16):
     if word_in_file(password, "wordlist.txt", False):
         print("Password is a dictionary word and is not secure.")
         return 0
+    
     if word_in_file(password, "toppasswords.txt", True):
         print("Password is a commonly used password and is not secure.")
         return 0
+    
     if len(password) < min_length:
         print("Password is too short and is not secure.")
         return 1
+    
     if len(password) >= strong_length:
         print("Password is long, length trumps complexity this is a good password.")
         return 5
@@ -85,10 +108,23 @@ def main():
     password strength information.
     """
     new_password = input("\nPlease input your password: ")
+    checked_passwords = []
+
     while new_password not in ["q", "Q"]:
-        strength = password_strength(new_password)
-        print(f"\nPassword strength: {strength}\n")
-        new_password = input("\nPlease input your password:")
+        if new_password in checked_passwords:
+
+            print(
+                "\nThis password has already been checked. \n"
+                  "Please enter a different unused password."
+                  ) 
+
+        else:
+            checked_passwords.append(new_password)
+            strength = password_strength(new_password)
+
+            print(f"\nPassword strength: {strength}\n")
+
+        new_password = input("\nPlease input your password: ")
 
 if __name__ == "__main__":
     main()
