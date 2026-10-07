@@ -1,3 +1,13 @@
+"""
+Name: King David Olaribigbe
+Project: Chemistry Calculator
+
+Enhancement:
+Added descriptive labels to the output so that users
+can clearly identify the molar mass and number of moles.
+Show more lines
+"""
+
 from formula import parse_formula
 
 def make_periodic_table():
@@ -117,22 +127,20 @@ def compute_molar_mass(symbol_quantity_list, periodic_table_dict):
     return total_mass
 
 def main():
-    formula = input("Enter the molecular formula of the sample: ")
-    sample_mass = float(input("Enter the mass in grams of the sample: "))
+    formula = input("\n Enter the molecular formula of the sample: ")
+    print()
+    sample_mass = float(input(" Enter the mass in grams of the sample: "))
 
     periodic_table_dict = make_periodic_table()
 
-    symbol_quantity_list = parse_formula(formula)
+    symbol_quantity_list = parse_formula(formula, periodic_table_dict)
 
-    molar_mass = compute_molar_mass(
-        symbol_quantity_list,
-        periodic_table_dict
-    )
+    molar_mass = compute_molar_mass(symbol_quantity_list, periodic_table_dict)
 
     number_of_moles = sample_mass / molar_mass
 
-    print(f"{molar_mass:.5f} grams/mole")
-    print(f"{number_of_moles:.5f} moles")
+    print(f"\n Molar mass: {molar_mass:.5f} grams/mole")
+    print(f" Number of moles: {number_of_moles:.5f} moles")
 
 if __name__ == "__main__":
     main()
