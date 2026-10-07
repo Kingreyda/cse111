@@ -1,0 +1,77 @@
+CSE 111 Proposal for a Student Chosen Program
+
+    (This is a proposal. All proposals are written with our best
+    knowledge at the beginning of a project. As we progress from the
+    beginning to the end of a project, we gain more knowledge, and we
+    change some of our proposed ideas. This is part of completing any
+    project and is fine.  However, we still must write a proposal so
+    that our teachers or supervisors know what we intend to do. Please
+    answer each of the following questions to the best of your
+    knowledge.)
+
+1. What is the title of your program? 
+    
+    Belly Wally Lite
+
+2. What real-world problem will your program address or help to solve?
+
+    Belly Wally Lite will help campus food vendors manage student 
+    meal subscriptions. Many vendors track customer meals, payments,
+    and balances manually using notebooks or memory, which can lead to 
+    mistakes and poor record keeping. This program will help vendors
+    register customers, calculate meal costs, record deposits, 
+    and track remaining balances more accurately.
+
+    The program will also provide a summary of customer subscription
+    and payment information in a simple and organized format.
+
+3. What will you learn from developing this program?
+
+    I will learn how to organize a larger Python project using 
+    multiple functions that each perform a single task. I will strengthen
+    my understanding of functions, parameters, return values, 
+    decision structures, data validation, and testing with pytest. I will 
+    also gain experience solving a real-world business problem using Python.
+
+4. What Python modules will your program use?
+
+    - pytest
+    - datetime
+    - math (if needed for calculations)
+
+    I may also use built-in Python modules and functions for user input, 
+    calculations, and data management.
+
+5. List the names of functions you will need?
+
+    get_customer_name()
+
+    get_subscription_days()
+
+    select_lunch_meal()
+
+    select_dinner_meal()
+
+    choose_delivery_option()
+
+    calculate_meal_cost()
+
+    calculate_delivery_cost()
+
+    calculate_total_cost()
+
+    calculate_balance()
+
+    display_customer_summary()
+
+    main()
+
+6. List the names of the test functions you will write.
+
+    test_calculate_meal_cost()
+
+    test_calculate_delivery_cost()
+
+    test_calculate_total_cost()
+
+    test_calculate_balance()
