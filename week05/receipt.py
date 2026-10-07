@@ -67,7 +67,7 @@ def main():
         print(f"Total: ${total:.2f}")
 
         time_now = datetime.now()
-        formatted_date = time_now.strftime("%a %b %d %H:%M:%S %Y")
+        formatted_date = time_now.strftime("%a %b %#d %H:%M:%S %Y")
         print(formatted_date)
 
         #Enhancement: Added a return-by date that shows customers the last date
@@ -80,7 +80,7 @@ def main():
             second=0
         )
 
-        print(f"\nReturn by: {return_by_date.strftime('%a %b %d %Y')} - {return_by_time.strftime('%I:%M %p')}")
+        print(f"\nReturn by: {return_by_date.strftime('%a %b %#d %Y')} - {return_by_time.strftime('%I:%M %p')}")
 
         print("\n===============================================")
         print("Thank you for shopping at King's Grocery Store.")
